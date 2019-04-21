@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">KissLingo</string>
+
+    <string-array name="subjectList">
+        <item>I</item>
+        <item>You</item>
+        <item>He/She</item>
+    </string-array>
+
+    <string-array name="tenseList">
+        <item>現在・肯定</item>
+        <item>現在・否定</item>
+        <item>過去・肯定</item>
+        <item>過去・否定</item>
+    </string-array>
+
 </resources>
