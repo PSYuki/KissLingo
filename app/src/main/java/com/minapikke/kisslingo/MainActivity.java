@@ -24,7 +24,7 @@ import android.util.Log;
 public class MainActivity extends AppCompatActivity {
 
     private final static String DB_NAME="example_sentences.db";
-    private final static String DB_TABLE="ExampleSentence";
+    private final static String DB_TABLE="ExampleSentences";
     private final static int DB_VERSION=1;
 
     private SQLiteDatabase DatabaseObject;
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         spinner.setAdapter(adapter);
 
         // デフォルト選択
-        tenseStr = getResources().getStringArray(R.array.tenseList)[0];
+        tenseStr = getResources().getStringArray(R.array.tenseList)[2];
 
         // リスナーを登録
         spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onClick(View v) {
                                 try {
-                                    String selectsql ="select id,word,subject,tense,eng_example,jap_example "+"from ExampleSentence"+"where tense = 'tenseStr'";
+                                    String selectsql ="SELECT id,word,subject,tense,eng_example,jap_example FROM ExampleSentences WHERE tense = '過去・否定'";
 
                                     Cursor cursor = DatabaseObject.rawQuery(selectsql,null);
 
@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
 
     //▼database method終了▼
 
-    // ▼MainActivity class終了▼
+
 
 
 
@@ -199,6 +199,7 @@ public class MainActivity extends AppCompatActivity {
         onCreate(db);
         }
     }
-}
+    //▼DatabaseHelper class終了▼
 
-//▼DatabaseHelper class終了▼
+}
+// ▼MainActivity class終了▼
