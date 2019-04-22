@@ -55,8 +55,10 @@ public class MainActivity extends AppCompatActivity {
 
         spinner.setAdapter(adapter);
 
-        // デフォルト選択
-        tenseStr = getResources().getStringArray(R.array.tenseList)[2];
+        // spinner未選択時
+        tenseStr = getResources().getStringArray(R.array.tenseList)[0];
+        // default表示切替
+        spinner.setSelection(0, false);
 
         // リスナーを登録
         spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -88,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onClick(View v) {
                                 try {
-                                    String selectsql ="SELECT id,word,subject,tense,eng_example,jap_example FROM ExampleSentences WHERE tense = '過去・否定'";
+                                    String selectsql ="SELECT id,word,subject,tense,eng_example,jap_example FROM ExampleSentences WHERE tense ='" + tenseStr + "'";
 
                                     Cursor cursor = DatabaseObject.rawQuery(selectsql,null);
 
