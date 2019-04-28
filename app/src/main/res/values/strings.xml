@@ -1,17 +1,52 @@
 <resources>
-    <string name="app_name">KissLingo</string>
+<string name="app_name">KissLingo</string>
 
-    <string-array name="subjectList">
-        <item>I</item>
-        <item>You</item>
-        <item>He/She</item>
-    </string-array>
+<string-array name="classList">
+<item>verb</item>
+<item>adjective</item>
+<item>noun</item>
+</string-array>
 
-    <string-array name="tenseList">
-        <item>現在・肯定</item>
-        <item>現在・否定</item>
-        <item>過去・肯定</item>
-        <item>過去・否定</item>
-    </string-array>
+<string-array name="wordVerbList">
+    <item>study</item>
+    <item>work</item>
+</string-array>
+
+<string-array name="wordAdjectiveList">
+    <item>busy</item>
+    <item>bored</item>
+</string-array>
+
+<string-array name="wordNounList">
+    <item>this</item>
+    <item>this-noun</item>
+</string-array>
+
+<string-array name="subjectList">
+    <item>I</item>
+    <item>you</item>
+    <item>he/she/else</item>
+</string-array>
+
+<string-array name="tenseVerbList">
+    <item>現在・肯定</item>
+    <item>現在・否定</item>
+    <item>過去・肯定</item>
+    <item>過去・否定</item>
+</string-array>
+
+<string-array name="tenseAdjectiveList">
+　　<item>現在印象・肯定</item>
+　　<item>現在印象・否定</item>
+　　<item>過去印象・肯定</item>
+　　<item>過去印象・否定</item>
+</string-array>
+
+<string-array name="tenseNounList">
+　　<item>現在可能性・肯定</item>
+　　<item>現在可能性・否定</item>
+　　<item>過去可能性・肯定</item>
+　　<item>過去可能性・否定</item>
+</string-array>
 
 </resources>
