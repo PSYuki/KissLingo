@@ -93,11 +93,31 @@ public class MainActivity extends AppCompatActivity {
 
                 Spinner spinner4 = (Spinner)parent;
                 classStr = (String)spinner4.getSelectedItem();
+
+                //spinner5 and spinner7のclassStrによる分岐定義
+                if(classStr.equals("verb")){
+                    setSpinner(spinner5, getResources().getStringArray(R.array.wordVerbList));
+                    setSpinner(spinner7, getResources().getStringArray(R.array.tenseVerbList));
+                }else if( classStr.equals("adjective")) {
+                    setSpinner(spinner5, getResources().getStringArray(R.array.wordAdjectiveList));
+                    setSpinner(spinner7, getResources().getStringArray(R.array.tenseAdjectiveList));
+                }else{
+                    setSpinner(spinner5, getResources().getStringArray(R.array.wordNounList));
+                    setSpinner(spinner7, getResources().getStringArray(R.array.tenseNounList));
+                }
+
             }
 
             //　アイテムが選択されなかった
             public void onNothingSelected(AdapterView<?> parent) {
                 //
+            }
+
+            private void setSpinner(Spinner spinner,String[] arr){
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_spinner_item, arr);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinner.setAdapter(adapter);
+                spinner.setSelection(0, false);
             }
         });
 
@@ -118,54 +138,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //spinner5 and spinner7のclassStrによる分岐定義
-        if(classStr == "verb"){
-            adapter5 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.wordVerbList));
-            adapter7 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.tenseVerbList));
-
-            adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            adapter7.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-            spinner5.setAdapter(adapter5);
-            spinner7.setAdapter(adapter7);
-
-            wordStr = getResources().getStringArray(R.array.wordVerbList)[0];
-            tenseStr = getResources().getStringArray(R.array.tenseVerbList)[0];
-
-            spinner5.setSelection(0, false);
-            spinner7.setSelection(0, false);
-
-        }else if( classStr == "adjective") {
-            adapter5 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.wordAdjectiveList));
-            adapter7 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.tenseAdjectiveList));
-
-            adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            adapter7.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-            spinner5.setAdapter(adapter5);
-            spinner7.setAdapter(adapter7);
-
-            wordStr = getResources().getStringArray(R.array.wordVerbList)[0];
-            tenseStr = getResources().getStringArray(R.array.tenseVerbList)[0];
-
-            spinner5.setSelection(0, false);
-            spinner7.setSelection(0, false);
-        }else{
-            adapter5 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.wordNounList));
-            adapter7 = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.tenseNounList));
-
-            adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            adapter7.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-            spinner5.setAdapter(adapter5);
-            spinner7.setAdapter(adapter7);
-
-            wordStr = getResources().getStringArray(R.array.wordNounList)[0];
-            tenseStr = getResources().getStringArray(R.array.tenseNounList)[0];
-
-            spinner5.setSelection(0, false);
-            spinner7.setSelection(0, false);
-        }
 
         // リスナーを登録 spinner5
         spinner5.setOnItemSelectedListener(new OnItemSelectedListener() {
