@@ -2,9 +2,9 @@
 <string name="app_name">KissLingo</string>
 
 <string-array name="classList">
-<item>verb</item>
-<item>adjective</item>
-<item>noun</item>
+    <item>verb</item>
+    <item>adjective</item>
+    <item>noun</item>
 </string-array>
 
 <string-array name="wordVerbList">

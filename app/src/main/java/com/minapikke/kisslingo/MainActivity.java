@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
                                        View view, int position, long id) {
 
                 Spinner spinner6 = (Spinner)parent;
-                tenseStr = (String)spinner6.getSelectedItem();
+                subjectStr = (String)spinner6.getSelectedItem();
             }
 
             //　アイテムが選択されなかった
