@@ -1,0 +1,5 @@
+id,ylang,tlang,level,wclass,word,subject,tense,type,ylang_ex,tlang_ex,tlang_exf,furigana,chikugoyaku
+1,English,Japanese,beginner,verb,いる,total 13,present positive,null,I am here now.,私は今ここにいる,私は | 今 | ここに | いる,watashi wa |  ima | koko ni | i ru,I | now | here | there is
+2,English,Japanese,beginner,verb,いる,null,present positive,nill,He is here now too.,彼も今ここにいます,彼も | 今 | ここに | います,kare mo | ima | koko ni | i masu,he too | now | here | there is(p)
+3,English,Japanese,beginner,verb,いる,null,present positive,null,Where are you now?,あなたは今どこにいますか？,あなたは | 今 | どこに | います | か？,anata wa | ima | doko ni | i masu | ka?,you | now | where | there is(p) | ?
+,,,,,いる,,,,,私は明日東京にいる,,, 
