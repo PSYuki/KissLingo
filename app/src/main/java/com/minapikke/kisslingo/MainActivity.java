@@ -92,28 +92,28 @@ public class MainActivity extends AppCompatActivity {
         } */
 
         try {
-            writetoDatabase(jap_verb.csv,String[] arrjap_verb);
-            writetoDatabase(jap_adjective.csv,String[] arrjap_verb);
-            writetoDatabase(eng_verb.csv,String[] arreng_verb);
+            writetoDatabase(String jap_verb.csv,String[] arrrjap_verb);
+            writetoDatabase(String jap_adjective.csv,String[] arrrjap_verb);
+            writetoDatabase(String eng_verb.csv,String[] arrreng_verb);
             }
             //}
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        private void writetoDatabase(data.csv,String[] arr){
+        private void writetoDatabase(String filename,String[] arrr){
             AssetManager assetManager = getApplicationContext().getAssets();
             //InputStream inputStream = assetManager.open("jap_verb" + i + ".csv");
-            InputStream inputStream = assetManager.open("data.csv");
+            InputStream inputStream = assetManager.open("filename.csv");
             InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
             BufferedReader bufferReader = new BufferedReader(inputStreamReader);
             String line;
             while ((line = bufferReader.readLine()) != null) {
-                String[] arr = line.split(",");
-                String Insertarr =
-                        "INSERT INTO " + DB_TABLE + "(ylang, tlang, level, wclass, word, subject, tense, type, ylang_ex, tlang_ex, tlang_exf, furigana, chikugoyaku) VALUES ('" + arr[1] + "','" + arr[2] + "','" + arr[3] + "','" + arr[4] + "','" + arr[5] + "','" + arr[6] + "','" + arr[7] + "','" + arr[8] + "','" + arr[9] + "','" + arr[10] + "','" + arr[11] + "','" + arr[12] + "','" + arr[13] + "')";
+                String[] arrr = line.split(",");
+                String Insertarrr =
+                        "INSERT INTO " + DB_TABLE + "(ylang, tlang, level, wclass, word, subject, tense, type, ylang_ex, tlang_ex, tlang_exf, furigana, chikugoyaku) VALUES ('" + arrr[1] + "','" + arrr[2] + "','" + arrr[3] + "','" + arrr[4] + "','" + arrr[5] + "','" + arrr[6] + "','" + arrr[7] + "','" + arrr[8] + "','" + arrr[9] + "','" + arrr[10] + "','" + arrr[11] + "','" + arrr[12] + "','" + arrr[13] + "')";
 
-                DatabaseObject.execSQL(Insertarr);
+                DatabaseObject.execSQL(Insertarrr);
 
         }
 
