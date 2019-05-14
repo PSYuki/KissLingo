@@ -72,14 +72,14 @@ public class MainActivity extends AppCompatActivity {
 
         try {
             AssetManager assetManager = getApplicationContext().getAssets();
-            InputStream inputStream = assetManager.open("日本語動詞.csv");
+            InputStream inputStream = assetManager.open("jap_verb.csv");
             InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
             BufferedReader bufferReader = new BufferedReader(inputStreamReader);
             String line;
             while ((line = bufferReader.readLine()) != null) {
                 String[] RowData = line.split(",");
                 String InsertRowData =
-                        "INSERT INTO " + DB_TABLE + "(ylang, tlang, level, wclass, word, subject, tense, type, ylang_ex, tlang_ex, tlang_exf, furigana, chikugoyaku) VALUES ('" + RowData[0] + "','" + RowData[1] + "','" + RowData[2] + "','" + RowData[3] + "','" + RowData[4] + "','" + RowData[5] + "','" + RowData[6] + "','" + RowData[7] + "','" + RowData[8] + "','" + RowData[9] + "','" + RowData[10] + "','" + RowData[11] + "','" + RowData[12] + "')";
+                        "INSERT INTO " + DB_TABLE + "(ylang, tlang, level, wclass, word, subject, tense, type, ylang_ex, tlang_ex, tlang_exf, furigana, chikugoyaku) VALUES ('" + RowData[1] + "','" + RowData[2] + "','" + RowData[3] + "','" + RowData[4] + "','" + RowData[5] + "','" + RowData[6] + "','" + RowData[7] + "','" + RowData[8] + "','" + RowData[9] + "','" + RowData[10] + "','" + RowData[11] + "','" + RowData[12] + "','" + RowData[13] + "')";
 
                 DatabaseObject.execSQL(InsertRowData);
             }
@@ -230,7 +230,7 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onClick(View v) {
                                 try {
-                                    String selectsql ="SELECT id,ylang,tlang,level,wclass,word,subject,tense,type,ylang_ex,tlang_ex,tlang_exf,furigana,chikugoyaku FROM ExampleSentences WHERE tense ='" + tenseStr + "'";
+                                    String selectsql ="SELECT id,ylang,tlang,level,wclass,word,subject,tense,type,ylang_ex,tlang_ex,tlang_exf,furigana,chikugoyaku FROM ExampleSentences";
                                     //String selectsql ="SELECT id,ylang,tlang,level,wclass,word,subject,tense,type,ylang_ex,tlang_ex,tlang_exf,furigana,chikugoyaku FROM ExampleSentences WHERE class ='" + wclassStr + "' and word ='" + wordStr + "' and subject ='" + subjectStr + "' and tense ='" + tenseStr + "'";
 
                                     Cursor cursor = DatabaseObject.rawQuery(selectsql,null);
@@ -248,6 +248,7 @@ public class MainActivity extends AppCompatActivity {
                                             String tlang_ex = cursor.getString(cursor.getColumnIndex("tlang_ex"));
 
                                             String row = id + ":" + word + ":" + subject + ":" + tense + ":" + ylang_ex + ":" + tlang_ex;
+                                            //String row = tense + ":" ;
                                             ad.add(row);
                                         }while(cursor.moveToNext());
                                     }
