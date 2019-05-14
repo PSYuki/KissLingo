@@ -70,21 +70,51 @@ public class MainActivity extends AppCompatActivity {
         // テーブルを作成
         DatabaseObject.execSQL(createTable);
 
+       /* try {
+            //for(int i=1; i<4; i++) {
+
+                AssetManager assetManager = getApplicationContext().getAssets();
+                //InputStream inputStream = assetManager.open("jap_verb" + i + ".csv");
+                InputStream inputStream = assetManager.open("jap_verb.csv");
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+                BufferedReader bufferReader = new BufferedReader(inputStreamReader);
+                String line;
+                while ((line = bufferReader.readLine()) != null) {
+                    String[] RowData = line.split(",");
+                    String InsertRowData =
+                            "INSERT INTO " + DB_TABLE + "(ylang, tlang, level, wclass, word, subject, tense, type, ylang_ex, tlang_ex, tlang_exf, furigana, chikugoyaku) VALUES ('" + RowData[1] + "','" + RowData[2] + "','" + RowData[3] + "','" + RowData[4] + "','" + RowData[5] + "','" + RowData[6] + "','" + RowData[7] + "','" + RowData[8] + "','" + RowData[9] + "','" + RowData[10] + "','" + RowData[11] + "','" + RowData[12] + "','" + RowData[13] + "')";
+
+                    DatabaseObject.execSQL(InsertRowData);
+                }
+            //}
+        } catch (IOException e) {
+            e.printStackTrace();
+        } */
+
         try {
+            writetoDatabase(jap_verb.csv,String[] arrjap_verb);
+            writetoDatabase(jap_adjective.csv,String[] arrjap_verb);
+            writetoDatabase(eng_verb.csv,String[] arreng_verb);
+            }
+            //}
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        private void writetoDatabase(data.csv,String[] arr){
             AssetManager assetManager = getApplicationContext().getAssets();
-            InputStream inputStream = assetManager.open("jap_verb.csv");
+            //InputStream inputStream = assetManager.open("jap_verb" + i + ".csv");
+            InputStream inputStream = assetManager.open("data.csv");
             InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
             BufferedReader bufferReader = new BufferedReader(inputStreamReader);
             String line;
             while ((line = bufferReader.readLine()) != null) {
-                String[] RowData = line.split(",");
-                String InsertRowData =
-                        "INSERT INTO " + DB_TABLE + "(ylang, tlang, level, wclass, word, subject, tense, type, ylang_ex, tlang_ex, tlang_exf, furigana, chikugoyaku) VALUES ('" + RowData[1] + "','" + RowData[2] + "','" + RowData[3] + "','" + RowData[4] + "','" + RowData[5] + "','" + RowData[6] + "','" + RowData[7] + "','" + RowData[8] + "','" + RowData[9] + "','" + RowData[10] + "','" + RowData[11] + "','" + RowData[12] + "','" + RowData[13] + "')";
+                String[] arr = line.split(",");
+                String Insertarr =
+                        "INSERT INTO " + DB_TABLE + "(ylang, tlang, level, wclass, word, subject, tense, type, ylang_ex, tlang_ex, tlang_exf, furigana, chikugoyaku) VALUES ('" + arr[1] + "','" + arr[2] + "','" + arr[3] + "','" + arr[4] + "','" + arr[5] + "','" + arr[6] + "','" + arr[7] + "','" + arr[8] + "','" + arr[9] + "','" + arr[10] + "','" + arr[11] + "','" + arr[12] + "','" + arr[13] + "')";
 
-                DatabaseObject.execSQL(InsertRowData);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+                DatabaseObject.execSQL(Insertarr);
+
         }
 
 
