@@ -1,52 +1,94 @@
 <resources>
-<string name="app_name">KissLingo</string>
+    <string name="app_name">KissLingo</string>
 
-<string-array name="classList">
-    <item>verb</item>
-    <item>adjective</item>
-    <item>noun</item>
-</string-array>
+    // class list Japanese
+    <string-array name="CLJ">
+        <item>動詞</item>
+        <item>形容詞</item>
+        <item>名詞</item>
+    </string-array>
 
-<string-array name="wordVerbList">
-    <item>study</item>
-    <item>work</item>
-</string-array>
+    // class list English
+    <string-array name="CLE">
+        <item>verb</item>
+        <item>adjective</item>
+        <item>noun</item>
+    </string-array>
 
-<string-array name="wordAdjectiveList">
-    <item>busy</item>
-    <item>bored</item>
-</string-array>
+    // word verb list Japanese
+    <string-array name="WVLJ">
+        <item>仕事をする</item>
+        <item>勉強する</item>
+    </string-array>
 
-<string-array name="wordNounList">
-    <item>this</item>
-    <item>this-noun</item>
-</string-array>
+    // word adjective list Japanese
+    <string-array name="WALJ">
+        <item>忙しい</item>
+        <item>暇だ</item>
+    </string-array>
 
-<string-array name="subjectList">
-    <item>I</item>
-    <item>you</item>
-    <item>he/she/else</item>
-</string-array>
+    // word noun list Japanese
+    <string-array name="WNLJ">
+        <item>これそれあれ</item>
+        <item>このそのあの</item>
+    </string-array>
 
-<string-array name="tenseVerbList">
-    <item>現在・肯定</item>
-    <item>現在・否定</item>
-    <item>過去・肯定</item>
-    <item>過去・否定</item>
-</string-array>
+    // word verb list English
+    <string-array name="WVLE">
+        <item>study</item>
+        <item>work</item>
+    </string-array>
 
-<string-array name="tenseAdjectiveList">
-　　<item>現在印象・肯定</item>
-　　<item>現在印象・否定</item>
-　　<item>過去印象・肯定</item>
-　　<item>過去印象・否定</item>
-</string-array>
+    // word adjective list English
+    <string-array name="WALE">
+        <item>busy</item>
+        <item>bored</item>
+    </string-array>
 
-<string-array name="tenseNounList">
-　　<item>現在可能性・肯定</item>
-　　<item>現在可能性・否定</item>
-　　<item>過去可能性・肯定</item>
-　　<item>過去可能性・否定</item>
-</string-array>
+    // word noun list English
+    <string-array name="WNLE">
+        <item>this</item>
+        <item>this-noun</item>
+    </string-array>
+
+    // subjective list English
+    <string-array name="SLE">
+        <item>I</item>
+        <item>you</item>
+        <item>he/she/else</item>
+    </string-array>
+
+    // tense verb list Japanese
+    <string-array name="TVLJ">
+        <item>現在・肯定</item>
+        <item>現在・否定</item>
+        <item>過去・肯定</item>
+        <item>過去・否定</item>
+    </string-array>
+
+    // tense adjective list Japanese
+    <string-array name="TALJ">
+        　　<item>現在印象・肯定</item>
+        　　<item>現在印象・否定</item>
+        　　<item>過去印象・肯定</item>
+        　　<item>過去印象・否定</item>
+    </string-array>
+
+    // tense noun list Japanese
+    <string-array name="TNLJ">
+        　　<item>現在可能性・肯定</item>
+        　　<item>現在可能性・否定</item>
+        　　<item>過去可能性・肯定</item>
+        　　<item>過去可能性・否定</item>
+    </string-array>
+
+    // tense verb list English
+    <string-array name="TVLE">
+    <item>present positive</item>
+    <item>present negative</item>
+    <item>past positive</item>
+    <item>past negative</item>
+    </string-array>
+
 
 </resources>
