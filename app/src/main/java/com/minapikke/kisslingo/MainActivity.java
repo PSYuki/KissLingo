@@ -91,9 +91,9 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         } */
 
-        writetoDatabase("jap_verb.csv",String[] arrrjap_verb);
-        writetoDatabase("jap_adjective.csv",String[] arrrjap_verb);
-        writetoDatabase("eng_verb.csv",String[] arrreng_verb);
+        writetoDatabase("jap_verb.csv");
+        writetoDatabase("jap_adjective.csv");
+        writetoDatabase("eng_verb.csv");
 
         // ▼spinner　onItemSelected設定▼
         final Spinner spinner4 = (Spinner) findViewById(R.id.spinner4);
@@ -272,7 +272,7 @@ public class MainActivity extends AppCompatActivity {
                             //　▼onCreate method終了▼
 
 
-    private void writetoDatabase(String filename, String[] arrr) {
+    private void writetoDatabase(String filename) {
         try{
             AssetManager assetManager = getApplicationContext().getAssets();
             //InputStream inputStream = assetManager.open("jap_verb" + i + ".csv");
