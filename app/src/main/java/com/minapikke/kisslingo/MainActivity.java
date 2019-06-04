@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
        // csvからのデータの書き込み
         writetoDatabase("jap_verb.csv");
-        writetoDatabase("eng_verb.csv");
+        //writetoDatabase("eng_verb.csv");
 
 
         // ▼spinner　onItemSelected設定▼
